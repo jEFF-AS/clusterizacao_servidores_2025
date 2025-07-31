@@ -2,18 +2,23 @@
 #include <mpi.h>
 
 /*
-Relato de aula -- Jeferson
+Relato de Aula – Jeferson
 
-O primeiro passo da aula foi executar o WSL. Mas ouve um problema, o WSL nao executa. 
-Instalei novamente o wsl via terminal, porem sem sucesso. Baixei o Ubuntu pelo Microsoft como alternativa e tambem nao tive sucesso.
-Entao busquei rodar o wsl em outro computador, mas sem sucesso.
-Voltei para o computador que eu estava antes, buscando solucionar o problema. 
-No powershell usei o comando `wsl --install -d ubuntu`, e reiniciei o computador sendo esse o passo vital para o sucesso da execussao do WSL.
+Na aula de hoje, o primeiro passo foi tentar executar o WSL (Windows Subsystem for Linux). 
+No entanto, enfrentei um problema: o WSL não iniciava corretamente.
 
-O WSL e permite executar um ambinte Linux diretamente no Windows, sem precisar instalar distribuicoes linux no disco fisico.
-Instalamos o MPI , que permite que varios processos rode ao mesmo tempo em varios nucleos diferentes, CPUs e ate mesmo em computadores diferentes.
- Foi instalado o gcc, realizado um clone de um repositorio e executado o arquivo ola_mundo.
+Tentei reinstalá-lo pelo terminal, mas não obtive sucesso. Como alternativa, baixei o Ubuntu pela Microsoft Store, porém o problema persistiu. 
+Em seguida, testei executar o WSL em outro computador, também sem êxito.
 
+Retornei então ao computador inicial e continuei buscando uma solução. No PowerShell, utilizei o comando wsl --install -d Ubuntu e reiniciei a máquina. 
+Essa reinicialização foi essencial para que o WSL funcionasse corretamente.
+
+O WSL permite executar um ambiente Linux diretamente no Windows, sem a necessidade de instalar uma distribuição Linux em um disco físico. 
+Após a configuração bem-sucedida, instalamos o MPI (Message Passing Interface), uma ferramenta que permite a execução de múltiplos processos em diferentes núcleos, 
+CPUs e até mesmo em computadores distintos.
+
+Além disso, foi instalado o compilador gcc (GCC (GNU Compiler Collection) é um compilador um programa que transforma código-fonte escrito por você (por exemplo, em C, C++ e outras linguagens) 
+em um programa executável que o computador consegue rodar.), feito o clone de um repositório e executado o arquivo ola_mundo.
 */
 
 int main(int argc, char *argv[]) {
