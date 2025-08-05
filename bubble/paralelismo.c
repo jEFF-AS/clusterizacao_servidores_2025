@@ -16,7 +16,7 @@ void bubble_sort(int *array, int n) {
 }
 
 int main(int argc, char** argv) {
-    int rank, size, n=256; 
+    int rank, size, n=1000; 
     int *data = NULL;
 
     MPI_Init(&argc, &argv);
