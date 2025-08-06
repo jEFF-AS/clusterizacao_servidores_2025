@@ -120,12 +120,4 @@ _Resposta:_
 
 ---
 
-### Observações
-
-- Faça commits frequentes com mensagens claras.
-- Crie um `commit` final com a tag `atividade-finalizada`.
-- Envie o link do seu repositório *forkado* com a atividade completa para luis.professor@uniatenas.edu.br
-
----
-
 **Boa prática!** 
