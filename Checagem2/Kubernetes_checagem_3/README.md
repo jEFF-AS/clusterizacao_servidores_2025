@@ -1,183 +1,185 @@
-# Flask Monte Carlo
+# Relatório de Desenvolvimento - Projeto Flask Monte Carlo
 
-Este projeto é uma aplicação Flask que realiza simulações Monte Carlo para estimativa de \$\pi\$, podendo rodar tanto **localmente em Docker** quanto de forma **distribuída em Kubernetes**.
-
-## Atividade prática NF2
-
-### O que os alunos devem fazer:
-
-1. Fazer o **deploy da aplicação** usando Docker e Kubernetes.
-2. Testar todos os **endpoints**:
-
-   * `/docker-info` para verificar informações do container.
-   * `/montecarlo/<n>` para testar a simulação em CPU única.
-   * `/montecarlo-distributed/<n>` para testar a simulação distribuída em múltiplos pods.
-3. Modificar o código para **adicionar um novo endpoint** que execute uma variação da simulação Monte Carlo (exemplo: estimativa de área de uma função ou outra forma geométrica).
-4. Utilizar o script `montecarlo_aggregator.py` ou criar sua própria lógica para **agregar resultados distribuídos**.
-
-### Critérios de avaliação:
-
-* Correto **deploy** da aplicação em Docker e Kubernetes.
-* Funcionamento correto de todos os **endpoints**.
-* Capacidade de **modificação do código** para criar um novo endpoint funcional.
-* Clareza e organização do **código e testes**.
-* Uso correto das ferramentas de container e cluster (Docker, Minikube/Kubernetes).
-
-### Sugestão de modificação no código:
-
-* Criar um endpoint `/montecarlo-square/<n>` que estima a área de um quadrado inscrito em um círculo usando Monte Carlo.
-* Retornar tanto a estimativa da área quanto a proporção de pontos dentro da área esperada.
-* Garantir que o endpoint funcione tanto em single CPU quanto em modo distribuído nos pods.
-
-### Possíveis Entregáveis:
-
-1. Documentação / README:
-
-   * Explicação de como buildar e rodar a aplicação Docker.
-   * Passos para deploy no Kubernetes.
-   * Lista de endpoints disponíveis com exemplos de chamadas.
-   * Explicação da modificação feita (ex: /montecarlo-square/<n>).
-
-2. Código fonte organizado:
-
-   * app.py atualizado com endpoints:
-
-     * /montecarlo/<n> (CPU única)
-     * /montecarlo-distributed/<n> (multi-pod)
-     * /montecarlo-square/<n> (modificação sugerida)
-   * Código limpo, modular e comentado.
-
-3. Testes automatizados:
-
-   * test\_app.py com testes unitários das funções Monte Carlo.
-   * Testes dos endpoints usando Flask test client.
-   * Cobertura mínima garantida (ex.: pytest --cov).
-
-4. Configuração Docker:
-
-   * Dockerfile funcional que permite build e run local.
-   * Porta 8080 corretamente exposta.
-   * Imagem Docker testada localmente (docker run funcionando).
-
-5. Configuração Kubernetes:
-
-   * Manifesto kube-flask-montecarlo.yaml incluindo:
-
-     * Deployment com 3 réplicas (pods).
-     * Service (LoadBalancer ou NodePort) expondo a aplicação.
-   * Verificação de pods (kubectl get pods) e serviço (kubectl get svc) funcionando.
-
-6. Evidências / prints:
-
-   * Terminal mostrando docker ps ou docker logs com container rodando.
-   * Terminal mostrando kubectl get pods com todos os pods prontos.
-   * Chamadas curl ou Postman mostrando retorno correto de todos os endpoints, incluindo /montecarlo-square/<n>.
-
-Enviar via email para luisvinicius.professor@uniatenas.edu.br ou commitar mudanças no repositório forkado.
+Este relatório detalha as etapas de desenvolvimento, deploy e modificações realizadas na aplicação Flask Monte Carlo, que estima o valor de π e outras áreas geométricas utilizando simulações de Monte Carlo, com suporte para execução local via Docker e distribuída em Kubernetes.
 
 ---
 
-## 📝 Estrutura do projeto
+## 1. Documentação / README
 
-```
-.
-├── app.py                        # Aplicação Flask
-├── Dockerfile                     # Dockerfile para container
-├── requirements.txt               # Dependências Python
-├── Makefile                       # Comandos automatizados (build, run, test)
-├── kube-flask-montecarlo.yaml     # Deployment e Service para Kubernetes
-├── montecarlo_aggregator.py       # Script Python para agregar resultados distribuídos
-├── test_app.py                     # Testes unitários / integração com pytest
-├── README.md
-└── minikube-linux-amd64           # Binário Minikube (opcional)
-```
+### 1.1. Explicação de como buildar e rodar a aplicação Docker
 
----
+Para buildar a imagem Docker da aplicação, navegue até o diretório raiz do projeto onde se encontram o `Dockerfile` e o `app.py`. Em seguida, execute o comando:
 
-## 🚀 Endpoints disponíveis
-
-* **`/docker-info`**
-  Retorna informações do container atual (hostname, diretório atual e variáveis de ambiente).
-
-* **`/montecarlo/<n>`**
-  Executa uma simulação Monte Carlo com `n` amostras em **CPU única**.
-
-* **`/montecarlo-distributed/<n>`**
-  Executa uma simulação Monte Carlo distribuída em múltiplos pods, retornando a estimativa parcial de cada pod.
-
----
-
-## 🐳 Docker
-
-### Build da imagem
-
-```
+```bash
 docker build -t flask-montecarlo:latest .
-```
 
-### Rodar o container
+````
 
-```
+Após o build bem-sucedido da imagem, você pode rodar a aplicação em um container Docker localmente, mapeando a porta 8080 do container para a porta 8080 do seu host:
+
+``` bash
 docker run -p 8080:8080 flask-montecarlo
-```
-
-### Testar endpoints
 
 ```
-curl http://127.0.0.1:8080/docker-info
-curl http://127.0.0.1:8080/montecarlo/1000000
-```
 
----
+Para verificar se a imagem foi criada e está disponível, você pode usar:
 
-## ☸️ Kubernetes (Minikube ou cluster local)
-
-### Aplicar Deployment e Service
+``` bash
+docker images | grep flask-montecarlo
 
 ```
-kubectl apply -f kube-flask-montecarlo.yaml
-kubectl get pods
-kubectl get svc
+
+### 1.2. Passos para deploy no Kubernetes
+
+O deploy da aplicação no Kubernetes é realizado através do manifesto `kube-flask-montecarlo.yaml`. Antes de aplicar o manifesto, é crucial garantir que a imagem Docker esteja disponível no ambiente do Minikube (ou do cluster Kubernetes).
+
+1.  **Iniciar o Minikube (se não estiver rodando):**
+    Quando o PC é reiniciado, o cluster Minikube para. Para iniciá-lo novamente, utilize:
+    
+    ``` bash
+    minikube start
+    
+    ```
+    
+    Confirme o status com `minikube status`.
+
+2.  **Carregar a imagem Docker para o Minikube:**
+    Para evitar o erro `ErrImageNeverPull`, a imagem `flask-montecarlo:latest` deve ser carregada no cache do Minikube. Alternativamente, pode-se buildar a imagem diretamente no ambiente Docker do Minikube.
+    
+      * **Opção 1 (Recomendada): Carregar imagem local para o Minikube**
+        
+        ``` bash
+        minikube image load flask-montecarlo:latest
+        
+        ```
+        
+        Após carregar, se o deployment já existia, pode ser necessário reiniciar os pods para que eles peguem a nova imagem:
+        
+        ``` bash
+        kubectl rollout restart deployment flask-montecarlo-deployment
+        
+        ```
+    
+      * **Opção 2: Buildar diretamente dentro do Minikube**
+        
+        ``` bash
+        eval $(minikube docker-env)
+        docker build -t flask-montecarlo:latest .
+        
+        ```
+        
+        (Após este comando, desfaça o `eval` com `eval $(minikube docker-env -u)` se quiser voltar ao Docker local).
+
+3.  **Aplicar o manifesto Kubernetes:**
+    Navegue até o diretório que contém o arquivo `kube-flask-montecarlo.yaml` e aplique-o:
+    
+    ``` bash
+    kubectl apply -f kube-flask-montecarlo.yaml
+    
+    ```
+    
+    Este manifesto cria um `Deployment` com 3 réplicas (`replicas: 3`) e um `Service` do tipo `LoadBalancer` (que em Minikube se comporta como `NodePort` ou requer `minikube tunnel` em algumas configurações) para expor a aplicação.
+
+4.  **Verificar o status dos pods e do serviço:**
+    
+    ``` bash
+    kubectl get pods
+    kubectl get svc
+    
+    ```
+    
+    Garanta que os pods estejam com `STATUS` como `Running` e que o `Service` `flask-montecarlo-service` esteja com o `PORT(S)` configurado (ex: `8080:xxxxx/TCP`).
+
+5.  **Acessar a aplicação no Kubernetes:**
+    Se o `EXTERNAL-IP` do `Service` estiver `<pending>` (comum no Minikube sem `minikube tunnel`), utilize o comando `minikube service` para obter a URL de acesso:
+    
+    ``` bash
+    minikube service flask-montecarlo-service --url
+    
+    ```
+    
+    Copie a URL fornecida para acessar os endpoints.
+
+### 1.3. Lista de endpoints disponíveis com exemplos de chamadas
+
+A aplicação Flask expõe os seguintes endpoints:
+
+  * **`/docker-info`**
+    Retorna informações do container Docker atual (hostname, diretório de trabalho e algumas variáveis de ambiente).
+    
+      * **Exemplo de chamada:**
+        ``` bash
+        # Se rodando em Docker local
+        curl [http://127.0.0.1:8080/docker-info](http://127.0.0.1:8080/docker-info)
+        
+        # Se rodando em Kubernetes (após port-forward ou minikube service --url)
+        curl http://<URL_DO_SERVICO>/docker-info
+        
+        ```
+
+  * **`/montecarlo/<n>`**
+    Executa uma simulação de Monte Carlo com `n` amostras para estimar o valor de π em uma única CPU (dentro de um container/pod).
+    
+      * **Exemplo de chamada:**
+        ``` bash
+        curl http://<URL_DO_SERVICO>/montecarlo/1000000
+        
+        ```
+
+  * **`/montecarlo-distributed/<n>`**
+    Executa uma simulação de Monte Carlo distribuída para estimar π. O total de `n` amostras é dividido entre os pods do deployment. Cada pod retorna uma estimativa parcial. Para o valor final, é necessário agregar os resultados de todos os pods.
+    
+      * **Exemplo de chamada:**
+        ``` bash
+        curl http://<URL_DO_SERVICO>/montecarlo-distributed/1000000
+        
+        ```
+      * **Para agregar os resultados**, pode-se usar o script `montecarlo_aggregator.py` (vide seção 1.4).
+
+  * **`/montecarlo-square/<n>`**
+    (Modificação implementada) Estima a área de um quadrado inscrito em um círculo de raio 1 usando a simulação de Monte Carlo com `n` amostras. Retorna a contagem de pontos dentro do círculo e do quadrado, a proporção e a área estimada.
+    
+      * **Exemplo de chamada:**
+        ``` bash
+        curl http://<URL_DO_SERVICO>/montecarlo-square/1000000
+        
+        ```
+
+  * **`/montecarlo-square-distributed/<n>`**
+    (Modificação implementada) Versão distribuída da simulação de Monte Carlo para a área do quadrado inscrito. Cada pod calcula uma parte das amostras, retornando uma estimativa parcial. Os resultados devem ser agregados para obter a estimativa final.
+    
+      * **Exemplo de chamada:**
+        ``` bash
+        curl http://<URL_DO_SERVICO>/montecarlo-square-distributed/1000000
+        
+        ```
+      * **Para agregar os resultados**, pode-se usar o script `montecarlo_aggregator.py` (vide seção 1.4).
+
+  * **`/montecarlo-triangle/<n>`**
+    (Modificação implementada) Estima a área de um triângulo (com vértices (0,0), (1,0), (0,1)) usando a simulação de Monte Carlo com `n` amostras. Retorna a área estimada e a área esperada (0.5).
+    
+      * **Exemplo de chamada:**
+        ``` bash
+        curl http://<URL_DO_SERVICO>/montecarlo-triangle/1000000
+        
+        ```
+
+### 1.4. Explicação da modificação feita
+
+Foi adicionado um novo endpoint para a aplicação Flask, `montecarlo-square/<n>`, que realiza uma variação da simulação de Monte Carlo. Este endpoint tem como objetivo estimar a área de um quadrado inscrito em um círculo de raio 1. A lógica envolve gerar pontos aleatórios dentro de um quadrado maior que engloba o círculo e o quadrado inscrito, e então verificar a proporção de pontos que caem dentro das respectivas formas.
+
+Além disso, para demonstrar a capacidade de distribuir essa nova simulação, foi criado o endpoint `/montecarlo-square-distributed/<n>`, que segue a mesma lógica de divisão de amostras entre os pods, semelhante ao `/montecarlo-distributed/<n>`.
+
+O script `montecarlo_aggregator.py` é utilizado para consolidar os resultados parciais obtidos dos pods ao usar os endpoints distribuídos (`/montecarlo-distributed/<n>` e `/montecarlo-square-distributed/<n>`). Ele faz requisições a cada pod (via o Kubernetes Service) e calcula a média das estimativas parciais para fornecer o resultado final.
+
+**Exemplo de `montecarlo_aggregator.py` (adaptado para incluir o novo endpoint distribuído, se aplicável):**
+
+``` python
+import requests
+import os
+
+# URL base do Service
+SERVICE_HOST = os.getenv("SERVICE_HOST", "127.0.0.1")
+SERVICE_PORT =
+
 ```
-
-### Acessar endpoints
-
-* **Port-forward**
-
-```
-kubectl port-forward service/flask-montecarlo-service 8080:8080
-curl http://127.0.0.1:8080/montecarlo-distributed/1000000
-```
-
-* **Minikube service**
-
-```
-minikube service flask-montecarlo-service --url
-curl http://<URL>/montecarlo-distributed/1000000
-```
-
-> Observação: cada pod calcula apenas sua parte (`pi_partial`). Para obter o valor final, use `montecarlo_aggregator.py` para agregar os resultados.
-
----
-
-## ✅ Testes
-
-```
-make test
-```
-
-Executa os testes unitários com `pytest` e cobertura de código.
-
----
-
-## 🛠 Makefile
-
-Alguns comandos úteis:
-
-* `make install` - instala dependências Python
-* `make lint` - verifica estilo e linting do código
-* `make build` - build da imagem Docker
-* `make run` - roda container Docker local
-* `make invoke` - testa endpoint Monte Carlo localmente
-* `make run-kube` - aplica manifestos Kubernetes
-
