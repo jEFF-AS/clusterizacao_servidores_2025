@@ -184,9 +184,13 @@ Após a correção no código com MPI_Isend e MPI_Irecv, não foram detectadas n
 
 ## ✅ Conclusão
 Bug identificado: Espera circular causada por uso de MPI_Send bloqueante em todos os processos simultaneamente.
+
 Solução aplicada: Uso de comunicação não bloqueante (MPI_Isend e MPI_Irecv), eliminando deadlock.
+
 Validação: Foi necessário rodar mais de 20 execuções para capturar o comportamento problemático. Após a correção, o sistema se manteve estável.
+
 Métricas: Tempos médios de espera confirmaram sincronização funcional, com pequenas diferenças de contenção entre filósofos.
+
 Ferramentas usadas: awk para detecção de padrões, wc -l para contagem de ocorrências e scripts em Bash para automação.
 
 
@@ -196,4 +200,5 @@ Ferramentas usadas: awk para detecção de padrões, wc -l para contagem de ocor
 * Capturas de tela (ou saída de terminal) mostrando filósofos pensando, com fome, comendo e esperando.
 * Tempos médios de espera de cada filósofo, comprovando ausência de deadlock após correção.
 * Código original e código corrigido.
+
 
