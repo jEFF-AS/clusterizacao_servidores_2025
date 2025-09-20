@@ -1,0 +1,155 @@
+Filósofo 3 pensando.
+Filósofo 4 pensando.
+Filósofo 0 pensando.
+Filósofo 1 pensando.
+Filósofo 1 com fome.
+Filósofo 2 pensando.
+Filósofo 2 com fome.
+Filósofo 3 com fome.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 1 comendo.
+Filósofo 2 comendo.
+Filósofo 3 comendo.
+Filósofo 4 com fome.
+Filósofo 4 comendo.
+Filósofo 4 pensando.
+Filósofo 3 pensando.
+Filósofo 2 pensando.
+Filósofo 0 pensando.
+Filósofo 1 pensando.
+Filósofo 0 com fome.
+Filósofo 4 com fome.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 0 comendo.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 4 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 1 pensando.
+Filósofo 2 pensando.
+Filósofo 0 pensando.
+Filósofo 3 pensando.
+Filósofo 4 pensando.
+Filósofo 0 com fome.
+Filósofo 3 com fome.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 4 com fome.
+Filósofo 4 comendo.
+Filósofo 0 comendo.
+Filósofo 3 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 2 pensando.
+Filósofo 4 pensando.
+Filósofo 4 com fome.
+Filósofo 1 pensando.
+Filósofo 3 pensando.
+Filósofo 0 pensando.
+Filósofo 2 com fome.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 2 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 4 comendo.
+Filósofo 3 pensando.
+Filósofo 0 pensando.
+Filósofo 4 pensando.
+Filósofo 2 pensando.
+Filósofo 1 pensando.
+Filósofo 4 com fome.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 4 comendo.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 0 pensando.
+Filósofo 3 pensando.
+Filósofo 2 pensando.
+Filósofo 2 com fome.
+Filósofo 1 pensando.
+Filósofo 4 pensando.
+Filósofo 4 com fome.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 4 comendo.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 2 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 4 pensando.
+Filósofo 3 pensando.
+Filósofo 2 pensando.
+Filósofo 0 pensando.
+Filósofo 1 pensando.
+Filósofo 4 com fome.
+Filósofo 3 com fome.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 3 comendo.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 4 comendo.
+Filósofo 3 pensando.
+Filósofo 0 pensando.
+Filósofo 1 pensando.
+Filósofo 2 pensando.
+Filósofo 4 pensando.
+Filósofo 1 com fome.
+Filósofo 0 com fome.
+Filósofo 1 comendo.
+Filósofo 4 com fome.
+Filósofo 4 comendo.
+Filósofo 0 comendo.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 4 pensando.
+Filósofo 1 pensando.
+Filósofo 3 pensando.
+Filósofo 0 pensando.
+Filósofo 2 pensando.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 4 com fome.
+Filósofo 4 comendo.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 0 pensando.
+Filósofo 1 pensando.
+Filósofo 2 pensando.
+Filósofo 4 pensando.
+Filósofo 4 com fome.
+Filósofo 3 pensando.
+Filósofo 1 com fome.
+Filósofo 4 comendo.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 1 comendo.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 0: tempo médio de espera = 0.300041 segundos em 10 refeições.
+Filósofo 4: tempo médio de espera = 0.600043 segundos em 10 refeições.
+Filósofo 3: tempo médio de espera = 0.200032 segundos em 10 refeições.
+Filósofo 2: tempo médio de espera = 0.500024 segundos em 10 refeições.
+Filósofo 1: tempo médio de espera = 0.300031 segundos em 10 refeições.

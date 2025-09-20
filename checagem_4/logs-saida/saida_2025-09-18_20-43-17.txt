@@ -1,0 +1,150 @@
+Filósofo 3 pensando.
+Filósofo 4 pensando.
+Filósofo 3 com fome.
+Filósofo 0 pensando.
+Filósofo 0 com fome.
+Filósofo 1 pensando.
+Filósofo 2 pensando.
+Filósofo 4 com fome.
+Filósofo 4 comendo.
+Filósofo 1 com fome.
+Filósofo 2 com fome.
+Filósofo 0 comendo.
+Filósofo 1 comendo.
+Filósofo 2 comendo.
+Filósofo 3 comendo.
+Filósofo 4 pensando.
+Filósofo 0 pensando.
+Filósofo 3 pensando.
+Filósofo 2 pensando.
+Filósofo 1 pensando.
+Filósofo 2 com fome.
+Filósofo 0 com fome.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 0 comendo.
+Filósofo 4 com fome.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 2 comendo.
+Filósofo 4 comendo.
+Filósofo 4 pensando.
+Filósofo 2 pensando.
+Filósofo 1 pensando.
+Filósofo 3 pensando.
+Filósofo 0 pensando.
+Filósofo 0 com fome.
+Filósofo 4 com fome.
+Filósofo 3 com fome.
+Filósofo 4 comendo.
+Filósofo 0 comendo.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 3 comendo.
+Filósofo 0 pensando.
+Filósofo 2 pensando.
+Filósofo 1 pensando.
+Filósofo 3 pensando.
+Filósofo 4 pensando.
+Filósofo 2 com fome.
+Filósofo 3 com fome.
+Filósofo 1 com fome.
+Filósofo 2 comendo.
+Filósofo 3 comendo.
+Filósofo 4 com fome.
+Filósofo 1 comendo.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 4 comendo.
+Filósofo 0 pensando.
+Filósofo 2 pensando.
+Filósofo 1 pensando.
+Filósofo 3 pensando.
+Filósofo 4 pensando.
+Filósofo 4 com fome.
+Filósofo 2 com fome.
+Filósofo 0 com fome.
+Filósofo 2 comendo.
+Filósofo 4 comendo.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 0 comendo.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 0 pensando.
+Filósofo 1 pensando.
+Filósofo 2 pensando.
+Filósofo 4 pensando.
+Filósofo 3 pensando.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 4 com fome.
+Filósofo 1 com fome.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 4 comendo.
+Filósofo 1 comendo.
+Filósofo 0 pensando.
+Filósofo 4 pensando.
+Filósofo 1 pensando.
+Filósofo 3 pensando.
+Filósofo 2 pensando.
+Filósofo 1 com fome.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 3 com fome.
+Filósofo 4 com fome.
+Filósofo 3 comendo.
+Filósofo 1 comendo.
+Filósofo 4 comendo.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 3 pensando.
+Filósofo 2 pensando.
+Filósofo 1 pensando.
+Filósofo 4 pensando.
+Filósofo 0 pensando.
+Filósofo 3 com fome.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 1 com fome.
+Filósofo 4 com fome.
+Filósofo 4 comendo.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 3 comendo.
+Filósofo 1 comendo.
+Filósofo 2 pensando.
+Filósofo 1 pensando.
+Filósofo 3 pensando.
+Filósofo 4 pensando.
+Filósofo 0 pensando.
+Filósofo 1 com fome.
+Filósofo 4 com fome.
+Filósofo 2 com fome.
+Filósofo 0 com fome.
+Filósofo 0 comendo.
+Filósofo 3 com fome.
+Filósofo 3 comendo.
+Filósofo 1 comendo.
+Filósofo 4 comendo.
+Filósofo 2 comendo.
+Filósofo 1 pensando.
+Filósofo 2 pensando.
+Filósofo 4 pensando.
+Filósofo 0 pensando.
+Filósofo 3 pensando.
+Filósofo 3 com fome.
+Filósofo 0 com fome.
+Filósofo 1 com fome.
+Filósofo 1 comendo.
+Filósofo 2 com fome.
+Filósofo 2 comendo.
+Filósofo 4 com fome.
+Filósofo 4 comendo.
+Filósofo 3 comendo.
+Filósofo 0 comendo.
