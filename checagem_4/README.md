@@ -7,7 +7,6 @@ Implementar sincronização e exclusão mútua entre processos.
 Identificar e corrigir um bug proposital no código fornecido, que poderia causar deadlock.
 Analisar as saídas do programa, observando o comportamento dos filósofos e detectando eventuais bloqueios.
 
---
 
 ## Código Base Utilizado
 O código fornecido apresentava o seguinte comportamento:
@@ -184,4 +183,5 @@ Arquivos analise_saida_*.txt mostrando onde houve deadlock.
 Capturas de tela (ou saída de terminal) mostrando filósofos pensando, com fome, comendo e esperando.
 Tempos médios de espera de cada filósofo, comprovando ausência de deadlock após correção.
 Código original e código corrigido.
+
 
